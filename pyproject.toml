@@ -1,0 +1,63 @@
+[tool.poetry]
+name = "vaptscribe-demo"
+version = "0.0.0"
+description = "Simplify and expedite your Vulnerability Assessment and Penetration Testing (VAPT) report creation with VAPTscribe, an automated report writing solution."
+authors = ["Abdulazeez Jimoh <abdulazeezojimoh@gmail.com>"]
+readme = "README.md"
+packages = [{ include = "lib"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+tiktoken = "^0.5.1"
+streamlit = "^1.28.2"
+openai = "^1.3.6"
+
+
+[tool.poetry.group.dev.dependencies]
+commitizen = "^3.12.0"
+black = "^23.11.0"
+flake8 = "^6.1.0"
+isort = "^5.12.0"
+ipykernel = "^6.27.1"
+pre-commit = "^3.5.0"
+pytest = "^7.4.3"
+
+[tool.commitizen]
+name = "cz_conventional_commits"
+tag_format = "v$version"
+version_scheme = "semver"
+version_provider = "poetry"
+update_changelog_on_bump = true
+major_version_zero = true
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.black]
+line-length = 100
+target-version = ['py38', 'py39', 'py310']
+include = '\.pyi?$'
+exclude = '''
+/(
+    \.git
+    | \.hg
+    | \.mypy_cache
+    | \.tox
+    | \.venv
+    | _build
+    | buck-out
+    | build
+    | dist
+
+    # The following are specific to Black, you probably don't want those.
+    | blib2to3
+    | tests/data
+)/
+'''
+
+[tool.isort]
+profile = "black"
+line_length = 100
+multi_line_output = 3
+include_trailing_comma = true
