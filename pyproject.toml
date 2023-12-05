@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "vaptscribe-demo"
-version = "0.0.0"
+version = "0.0.1"
 description = "Simplify and expedite your Vulnerability Assessment and Penetration Testing (VAPT) report creation with VAPTscribe, an automated report writing solution."
 authors = ["Abdulazeez Jimoh <abdulazeezojimoh@gmail.com>"]
 readme = "README.md"
